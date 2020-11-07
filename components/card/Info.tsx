@@ -1,13 +1,16 @@
-import { Flex, Text } from '@chakra-ui/core';
+import { Flex, Spinner, Text } from '@chakra-ui/core';
 import React from 'react';
 
 interface InfoCompProps {
   keyTxt: string;
   valueTxt: string;
   mid: boolean;
+  isLoading: boolean;
 }
 
-const Info: React.FC<InfoCompProps> = ({ keyTxt, valueTxt, mid }) => {
+const Info: React.FC<InfoCompProps> = props => {
+  const { keyTxt, valueTxt, mid, isLoading } = props;
+
   const blMID = mid ? 1 : 0;
   const mlMID = mid ? 8 : 0;
 
@@ -30,13 +33,17 @@ const Info: React.FC<InfoCompProps> = ({ keyTxt, valueTxt, mid }) => {
       >
         {keyTxt}
       </Text>
-      <Text
-        fontSize={{ base: 'xl', sm: 'lg', lg: 'xl', xl: '2xl' }}
-        fontWeight={600}
-        color="gray.700"
-      >
-        {valueTxt}
-      </Text>
+      {isLoading ? (
+        <Spinner my={2} />
+      ) : (
+        <Text
+          fontSize={{ base: 'xl', sm: 'lg', lg: '2xl' }}
+          fontWeight={600}
+          color="gray.700"
+        >
+          {valueTxt}
+        </Text>
+      )}
     </Flex>
   );
 };

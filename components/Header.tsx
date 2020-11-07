@@ -11,13 +11,17 @@ const Header: React.FC<HeaderCompProps> = ({ form, card }) => (
     direction="column"
     bgImage="url('./pattern-bg.png')"
     bgRepeat="no-repeat"
-    bgSize="cover"
-    w="100vw"
+    bgSize={{
+      base: '100% 66%',
+      sm: '100% 76%',
+      md: '100% 80%',
+      lg: '100% 78%',
+    }}
     px={4}
   >
     <header>
       <Text
-        fontSize={{ base: '2xl' }}
+        fontSize={{ base: '2xl', md: '3xl' }}
         fontWeight={500}
         letterSpacing="wide"
         as="h1"

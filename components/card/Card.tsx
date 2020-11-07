@@ -14,12 +14,22 @@ const Card: React.FC = () => (
     columns={{ base: 1, sm: 2, md: 4 }}
     mx="auto"
     py={{ base: 5, lg: 6 }}
-    px={{ md: 5, lg: 6, xl: 8 }}
+    px={{ md: 5, lg: 8 }}
   >
-    <Info keyTxt="IP Address" valueTxt="192.212.174.101" mid={false} />
-    <Info keyTxt="Location" valueTxt="Brooklyn, NY" mid />
-    <Info keyTxt="TimeZone" valueTxt="UTC -05:00" mid />
-    <Info keyTxt="ISP" valueTxt="SpaceX Starlink" mid />
+    <Info
+      isLoading={false}
+      keyTxt="IP Address"
+      valueTxt="192.212.174.101"
+      mid={false}
+    />
+    <Info
+      isLoading={false}
+      keyTxt="Location"
+      valueTxt="Brooklyn, NY, 10001"
+      mid
+    />
+    <Info isLoading={false} keyTxt="TimeZone" valueTxt="UTC -05:00" mid />
+    <Info isLoading={false} keyTxt="ISP" valueTxt="SpaceX Starlink" mid />
   </SimpleGrid>
 );
 
