@@ -10,7 +10,11 @@ const MyMap = dynamic(() => import('../components/Map'), { ssr: false });
 const AppHome: React.FC = () => (
   <main>
     <Header form={<InputForm />} card={<Card />} />
-    <MyMap coordinates={[51.505, -0.09]} address="Brooklyn, NY, 10001" />
+    <MyMap
+      coordinates={[51.505, -0.09]}
+      ip="192.168.1.1"
+      address="Brooklyn, NY, 10001"
+    />
   </main>
 );
 

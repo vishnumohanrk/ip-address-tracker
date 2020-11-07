@@ -12,9 +12,10 @@ import {
 interface MapCompProps {
   coordinates: LatLngTuple;
   address: string;
+  ip: string;
 }
 
-const Map: React.FC<MapCompProps> = ({ coordinates, address }) => (
+const Map: React.FC<MapCompProps> = ({ coordinates, address, ip }) => (
   <Box
     top={{ base: '66%', sm: '76%', md: '80%', lg: '78%' }}
     position="absolute"
@@ -35,7 +36,10 @@ const Map: React.FC<MapCompProps> = ({ coordinates, address }) => (
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <Marker position={coordinates}>
-        <Popup>{address}</Popup>
+        <Popup>
+          <div>{ip}</div>
+          <div>{address}</div>
+        </Popup>
       </Marker>
       <ZoomControl position="bottomright" />
     </MapContainer>
