@@ -6,8 +6,9 @@ export interface IDetails {
   coordinates: [number, number];
 }
 
+export type TSubmit = (ip: string) => void;
+
 export interface IRetData {
   data: IDetails;
-  isLoading: boolean;
-  isError: boolean;
+  setIp: TSubmit;
 }

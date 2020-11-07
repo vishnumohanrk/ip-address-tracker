@@ -1,9 +1,10 @@
 import { SimpleGrid } from '@chakra-ui/core';
 import React from 'react';
 
+import { IDetails } from '../../utils/models';
 import Info from './Info';
 
-const Card: React.FC = () => (
+const Card: React.FC<IDetails> = ({ ip, isp, location, timezone }) => (
   <SimpleGrid
     rounded="xl"
     boxShadow="xl"
@@ -16,20 +17,10 @@ const Card: React.FC = () => (
     py={{ base: 5, lg: 6 }}
     px={{ md: 5, lg: 8 }}
   >
-    <Info
-      isLoading={false}
-      keyTxt="IP Address"
-      valueTxt="192.212.174.101"
-      mid={false}
-    />
-    <Info
-      isLoading={false}
-      keyTxt="Location"
-      valueTxt="Brooklyn, NY, 10001"
-      mid
-    />
-    <Info isLoading={false} keyTxt="TimeZone" valueTxt="UTC -05:00" mid />
-    <Info isLoading={false} keyTxt="ISP" valueTxt="SpaceX Starlink" mid />
+    <Info keyTxt="IP Address" valueTxt={ip} mid={false} />
+    <Info keyTxt="Location" valueTxt={location} mid />
+    <Info keyTxt="TimeZone" valueTxt={timezone} mid />
+    <Info keyTxt="ISP" valueTxt={isp} mid />
   </SimpleGrid>
 );
 

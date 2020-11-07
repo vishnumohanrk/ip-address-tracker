@@ -1,9 +1,10 @@
 import { Flex, IconButton, Input } from '@chakra-ui/core';
 import React, { useState } from 'react';
 
+import { TSubmit } from '../utils/models';
 import IcoArrow from './icons/IcoArrow';
 
-const InputForm: React.FC = () => {
+const InputForm: React.FC<{ submit: TSubmit }> = ({ submit }) => {
   const [value, setValue] = useState<string>('');
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) =>
@@ -11,7 +12,7 @@ const InputForm: React.FC = () => {
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    console.log(value);
+    submit(value);
   };
 
   return (
