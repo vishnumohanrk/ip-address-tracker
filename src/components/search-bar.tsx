@@ -1,18 +1,34 @@
+import { useRouter } from 'next/router';
+import { useRef } from 'react';
+
 export function SearchBar() {
+  const router = useRouter();
+  const ref = useRef<HTMLInputElement>(null);
+
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const val = ref.current?.value;
+
+    if (val) {
+      router.push(`/?query=${val}`);
+    }
   }
 
   return (
-    <form className="mx-auto flex max-w-xl" onSubmit={handleSubmit}>
+    <form
+      role="search"
+      onSubmit={handleSubmit}
+      className="mx-auto flex max-w-xl"
+    >
       <label htmlFor="search" className="sr-only">
         Search for any IP Address or domain
       </label>
       <input
+        ref={ref}
         id="search"
         name="query"
-        type="search"
-        className="flex-1 rounded-l-xl py-4 pl-6"
+        type="text"
+        className="flex-1 rounded-l-xl px-6 py-4"
         placeholder="Search for any IP Address or domain"
       />
       <button
