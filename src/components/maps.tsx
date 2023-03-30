@@ -6,7 +6,7 @@ import { MapMarker } from './map-marker';
 
 export default function Leaflet() {
   return (
-    <div className="h-[calc(100vh-var(--pattern-ht))] w-full">
+    <div className="maps-leaf w-full">
       <MapContainer
         zoom={13}
         center={[0, 0]}

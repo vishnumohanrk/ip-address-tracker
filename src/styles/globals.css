@@ -4,12 +4,23 @@
 
 @layer base {
   :root {
-    --pattern-ht: 300px;
+    --pattern-ht: 320px;
   }
 
   @media screen(sm) {
     :root {
       --pattern-ht: 256px;
+    }
+  }
+
+  .maps-leaf {
+    height: calc(100vh - var(--pattern-ht));
+  }
+
+  @media (max-height: 900px) and (max-width: 1024px),
+    (max-height: 600px) and (min-width: 1024px) {
+    .maps-leaf {
+      height: 100vh;
     }
   }
 }
