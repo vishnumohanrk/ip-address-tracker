@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 
+import { AppFooter } from '@/components/app-footer';
 import { AppHeader } from '@/components/app-header';
 import { BgPattern } from '@/components/bg-pattern';
 import { CardContent } from '@/components/card-content';
@@ -29,6 +30,7 @@ export default function AppHome() {
         </dl>
       </div>
       <Leaflet />
+      <AppFooter />
     </>
   );
 }

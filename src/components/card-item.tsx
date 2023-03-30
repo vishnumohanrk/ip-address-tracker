@@ -5,7 +5,7 @@ type CardItemProps = {
 
 export function CardItem({ keyText, value }: CardItemProps) {
   return (
-    <div className="border-black/[0.15] px-2 last:border-0 sm:border-r sm:px-8">
+    <div className="border-black/[0.15] px-4 last:border-0 sm:border-r sm:px-8">
       <dt className="mb-1.5 text-xs font-bold uppercase tracking-wide text-gray/50 sm:text-sm">
         {keyText}
       </dt>
