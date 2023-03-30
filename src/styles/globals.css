@@ -17,7 +17,7 @@
     height: calc(100vh - var(--pattern-ht));
   }
 
-  @media (max-height: 900px) and (max-width: 1024px),
+  @media (max-height: 750px) and (max-width: 1024px),
     (max-height: 600px) and (min-width: 1024px) {
     .maps-leaf {
       height: 100vh;
