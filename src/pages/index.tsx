@@ -25,7 +25,7 @@ export default function AppHome() {
       <div className="absolute top-0 z-[500] w-full max-xl:px-6">
         <AppHeader />
         <SearchBar />
-        <dl className="mx-auto mt-6 grid w-full max-w-6xl grid-cols-1 rounded-xl bg-white py-6 shadow-card max-lg:gap-y-6 max-sm:text-center sm:grid-cols-2 sm:py-8 lg:mt-8 lg:grid-cols-4">
+        <dl className="mx-auto mt-6 grid w-full max-w-6xl grid-cols-1 rounded-xl bg-white py-6 shadow-card max-lg:gap-y-6 max-sm:text-center sm:grid-cols-2 sm:py-8 lg:mt-9 lg:grid-cols-4">
           <CardContent />
         </dl>
       </div>

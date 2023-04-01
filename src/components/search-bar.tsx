@@ -29,7 +29,7 @@ export function SearchBar() {
         id="search"
         name="query"
         type="search"
-        className="w-full rounded-l-xl px-6 py-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray"
+        className="w-full rounded-l-xl px-6 py-4 text-gray placeholder:text-gray/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray"
         placeholder="Search for any IP Address or domain"
       />
       <button
