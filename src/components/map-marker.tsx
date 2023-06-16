@@ -3,26 +3,24 @@ import { icon } from 'leaflet';
 import { useEffect, useState } from 'react';
 import { Marker, useMap } from 'react-leaflet';
 
-import { useAPI } from '@/hooks/use-api';
-
 import markerSVG from '../../public/icon-location.svg';
 
 const markerIcon = icon({
   iconUrl: markerSVG.src,
 });
 
-export function MapMarker() {
+export function MapMarker({ pos }: { pos: LatLngTuple | null }) {
   const map = useMap();
-  const { details } = useAPI();
   const [coor, setCoor] = useState<LatLngTuple>(() => [0, 0]);
 
+  console.log('post');
+
   useEffect(() => {
-    if (details?.success) {
-      const newCoor: LatLngTuple = [details.latitude, details.longitude];
-      map.flyTo(newCoor, 16);
-      setCoor(newCoor);
+    if (pos !== null) {
+      map.flyTo(pos, 14);
+      setCoor(pos);
     }
-  }, [details, map]);
+  }, [map, pos]);
 
   return <Marker icon={markerIcon} position={coor} />;
 }
