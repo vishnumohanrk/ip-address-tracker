@@ -19,7 +19,7 @@ export function MapMarker() {
   useEffect(() => {
     if (details?.success) {
       const newCoor: LatLngTuple = [details.latitude, details.longitude];
-      map.flyTo(newCoor, 16);
+      map.flyTo(newCoor, 14);
       setCoor(newCoor);
     }
   }, [details, map]);

@@ -8,7 +8,7 @@ export default function Leaflet() {
   return (
     <div className="maps-leaf w-full">
       <MapContainer
-        zoom={16}
+        zoom={14}
         center={[0, 0]}
         zoomControl={false}
         className="h-full w-full"
